@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-bool db_write_file_bitstream(const std::string& filename, const unsigned char* const data, const uint64_t data_size) {
+bool db_write_file_bitstream(const std::string& filename, const unsigned char* const data, const unsigned long int data_size) {
     try {
         // Open the file in binary mode for writing
         std::ofstream file(filename, std::ios::out | std::ios::binary);
@@ -35,7 +35,7 @@ int main() {
     // Example usage
     const std::string filename = "example.bin";
     const unsigned char data[] = { 0x41, 0x42, 0x43 }; // Example data
-    const uint64_t data_size = sizeof(data);
+    const unsigned long long int data_size = sizeof(data);
 
     if (db_write_file_bitstream(filename, data, data_size)) {
         std::cout << "Data written successfully to file: " << filename << std::endl;
